@@ -46,6 +46,17 @@ const add<%= model %> = async (req: Request, res: Response) => {
 
 };
 
+const update<%= model %> = async (req: Request, res: Response) => {
+  const <%= endpoint %>Update: I<%= model %>Update = {
+  };
+  try {
+    const response = await <%= endpoint %>Service.update(req.params.id, <%= endpoint %>Update);
+    return res.send(response);
+  } catch (e) {
+    errorDebugger(e);
+    return res.status(500).send(e);
+  }
+};
 
 
 export = {
@@ -53,4 +64,5 @@ export = {
   add: add<%= model %>,
   remove: remove<%= model %>,
   getById: get<%= model %>ById,
+  update: update<%= model %>
 };

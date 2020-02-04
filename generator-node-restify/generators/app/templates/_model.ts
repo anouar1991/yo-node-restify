@@ -2,6 +2,9 @@ import db from '../services/db.service';
 import {Document, Model, Schema, SchemaTypes} from "mongoose";
 const String = SchemaTypes.String;
 
+export interface I<%= model %>Update{
+}
+
 export interface I<%= model %> extends Document{
   id: string,
     customFunction()
