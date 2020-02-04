@@ -1,4 +1,4 @@
-import <%= model %> from '../models/<%= endpoint %>.model';
+import {<%= model %>} from '../models/<%= endpoint %>.model';
 import {errorDebugger} from '../utils/debuggers';
 
 async function list() {

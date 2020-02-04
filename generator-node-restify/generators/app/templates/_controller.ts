@@ -1,4 +1,5 @@
-import {<%= endpoint %>Service} from '../services/<%= endpoint %>.service';
+import <%= endpoint %>Service from '../services/<%= endpoint %>.service';
+import {I<%= model %>Update} from "../models/<%= endpoint %>.model";
 import {errorDebugger} from '../utils/debuggers';
 import {Request, Response} from "express";
 

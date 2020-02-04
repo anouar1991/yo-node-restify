@@ -1,8 +1,9 @@
 import db from '../services/db.service';
-import {Document, Model, Schema, SchemaTypes} from "mongoose";
-const String = SchemaTypes.String;
+import {Document, Model, Schema} from "mongoose";
+const StringType = Schema.Types.String;
 
 export interface I<%= model %>Update{
+  any
 }
 
 export interface I<%= model %> extends Document{
@@ -10,7 +11,7 @@ export interface I<%= model %> extends Document{
     customFunction()
 }
 const <%= model %>Schema: Schema = new db.Schema({
-  id: String,
+  id: StringType,
 });
 
 <%= model %>Schema.methods.customFunction = async function (): Promise <Model<I<%= model %>>>{
