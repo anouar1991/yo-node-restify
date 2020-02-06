@@ -1,7 +1,7 @@
 import {<%= model %>} from '../models/<%= endpoint %>.model';
 import {errorDebugger} from '../utils/debuggers';
 
-async function list() {
+async function list<%= model %>() {
   try {
     return await <%= model %>.find({});
   } catch (e) {
@@ -10,7 +10,7 @@ async function list() {
   }
 }
 
-async function getById(<%= endpoint %>Id) {
+async function get<%= model %>ById(<%= endpoint %>Id) {
   try {
     const <%= endpoint %> = await <%= model %>.findById(<%= endpoint %>Id);
     if (!<%= endpoint %>) {
@@ -60,8 +60,8 @@ async function update<%= model %>(<%= endpoint %>Id, <%= endpoint %>Update: I<%=
 }
 
 export = {
-  list: list,
+  list: list<%= model %>,
   add: add<%= model %>,
   remove: remove<%= model %>,
-  getById: getById,
+  getById: get<%= model %>ById,
 }
