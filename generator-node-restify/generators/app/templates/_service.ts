@@ -45,6 +45,19 @@ async function remove<%= model %>(<%= endpoint %>Id) {
 
 }
 
+async function update<%= model %>(<%= endpoint %>Id, <%= endpoint %>Update: I<%= model %>Update) {
+
+  try {
+    const result = await <%= model %>.findById(<%= endpoint %>Id);
+    if (!result) {
+      throw  Error(`<%= model %> with id: ${<%= endpoint %>Id} doesn't exist`);
+    }
+    await result.updateOne(<%= endpoint %>Update);
+    return result;
+  } catch (e) {
+    throw e;
+  }
+}
 
 export = {
   list: list,
