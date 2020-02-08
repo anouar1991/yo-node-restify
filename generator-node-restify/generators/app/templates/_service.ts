@@ -1,4 +1,4 @@
-import {<%= model %>} from '../models/<%= endpoint %>.model';
+import {<%= model %>, I<%= model %>Update} from '../models/<%= endpoint %>.model';
 import {errorDebugger} from '../utils/debuggers';
 
 async function list<%= model %>() {
@@ -64,4 +64,5 @@ export = {
   add: add<%= model %>,
   remove: remove<%= model %>,
   getById: get<%= model %>ById,
+  update: update<%= model %>
 }
